@@ -47,10 +47,12 @@ inputs:
   author_icon:
     description: Author Icon/Image that would be on the embed
     required: false
+    default: null
   
   author_url:
     description: URL of The author which is on the embed
     required: false
+    default: null
 
   # Footer
   footer:
@@ -60,6 +62,7 @@ inputs:
   footer_icon:
     description: Footer Icon/Image that would be on the embed
     required: false
+    default: null
 
   # Image
   image:
@@ -75,6 +78,7 @@ inputs:
   color:
     description: Hex Code of a Color that would be on the embed, it would be RANDOM if it's not provided
     required: false
+    default: RANDOM
 
   timestamp:
     description: Enable Timestamp for the Embed

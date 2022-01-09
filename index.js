@@ -11,24 +11,24 @@ const data = {
     webhook_TOKEN: core.getInput("token"),
 
     // Webhook Options
-    avatar: core.getInput("avatar") || false,
-    username: core.getInput("username") || false,
-    content: core.getInput("content") || false,
+    avatar: core.getInput("avatar"),
+    username: core.getInput("username"),
+    content: core.getInput("content"),
 
     // Embed Options
-    title: core.getInput("title") || (github.context.eventName == "push") ? `Commit on ${github.context.repo.owner}/${github.context.repo.repo}` : `Release ${github.context.payload.release.tag_name}`,
-    url: core.getInput("url")  || (github.context.eventName == "push") ? github.context.payload.head_commit.url : github.context.payload.release.url,
-    description: core.getInput("description") || (github.context.eventName == "push") ? `` : ``,
+    title: core.getInput("title"),
+    url: core.getInput("url"),
+    description: core.getInput("description"),
 
     author: (core.getInput("author")) ? {
         name: core.getInput("author"),
-        iconURL: core.getInput("author_icon") || null,
-        url: core.getInput("author_url") || null
+        iconURL: core.getInput("author_icon"),
+        url: core.getInput("author_url")
     } : null,
 
     footer: (core.getInput("footer")) ? {
         text: core.getInput("footer"),
-        iconURL: core.getInput("footer_icon") || null
+        iconURL: core.getInput("footer_icon"),
     } : null,
 
     image: (core.getInput("image")) ? {
@@ -39,8 +39,8 @@ const data = {
         url: core.getInput("thumbnail")
     } : null,
 
-    timestamp: (core.getInput("timestamp")) ? true : false,
-    color: core.getInput("color") || "RANDOM"
+    timestamp: core.getInput("timestamp"),
+    color: core.getInput("color")
 
 };
 
