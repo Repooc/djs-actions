@@ -47,7 +47,7 @@ const data = {
 try {
     core.debug("Loading Client...");
     
-    const Client = new WebhookClient(data.webhook_ID, data.webhook_TOKEN);
+    const Client = new WebhookClient({id: data.webhook_ID, token: data.webhook_TOKEN});
     delete data.webhook_TOKEN;
     delete data.webhook_ID;
 
