@@ -52,10 +52,13 @@ try {
     delete data.webhook_ID;
 
     const ResultMessage = BuildMessage(data);
-    if(data.content)
+    if(data.content) {
+        core.info('Sending content message');
         Client.send(data.content, ResultMessage);
-    else
+    } else {
+        core.info('Sending embed message');
         Client.send(ResultMessage);
+    }
 
 } catch (error) {
     core.setFailed("[Discord.js]: ", error)
