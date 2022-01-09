@@ -49,7 +49,7 @@ try {
     
     const Client = new WebhookClient({id: data.webhook_ID, token: data.webhook_TOKEN});
     core.info("Configuration");
-    core.info(JSON.encode(data));
+    core.info(JSON.stringify(data));
     delete data.webhook_TOKEN;
     delete data.webhook_ID;
 
