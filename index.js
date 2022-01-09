@@ -48,6 +48,8 @@ try {
     core.debug("Loading Client...");
     
     const Client = new WebhookClient({id: data.webhook_ID, token: data.webhook_TOKEN});
+    core.info("Configuration");
+    core.info(JSON.encode(data));
     delete data.webhook_TOKEN;
     delete data.webhook_ID;
 
