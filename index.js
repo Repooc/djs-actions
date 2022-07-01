@@ -51,10 +51,7 @@ try {
     const Client = new WebhookClient({id: data.webhook_ID, token: data.webhook_TOKEN});
     core.info("Configuration");
     core.info(JSON.stringify(data));
-    core.info("core.getInput('fields')")
-    core.info(core.getInput("fields"))
-    core.info("JSON.parse(core.getInput('fields'))")
-    core.info(JSON.parse(core.getInput("fields")))
+    core.info(core.getInput("description"))
     delete data.webhook_TOKEN;
     delete data.webhook_ID;
 
