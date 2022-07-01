@@ -42,7 +42,7 @@ const data = {
     timestamp: core.getInput("timestamp"),
     color: core.getInput("color"),
 
-    fields: (core.getInput("fields") && typeof(core.getInput("fields") === "object")) ? core.getInput("fields") : null,
+    fields: (core.getInput("fields") && typeof(core.getInput("fields") === "object")) ? JSON.parse(core.getInput("fields")) : null,
 };
 
 try {
@@ -51,6 +51,10 @@ try {
     const Client = new WebhookClient({id: data.webhook_ID, token: data.webhook_TOKEN});
     core.info("Configuration");
     core.info(JSON.stringify(data));
+    core.info("core.getInput('fields')")
+    core.info(core.getInput("fields"))
+    core.info("JSON.parse(core.getInput('fields'))")
+    core.info(JSON.parse(core.getInput("fields")))
     delete data.webhook_TOKEN;
     delete data.webhook_ID;
 
