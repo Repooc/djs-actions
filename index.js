@@ -40,13 +40,14 @@ const data = {
     } : null,
 
     timestamp: core.getInput("timestamp"),
-    color: core.getInput("color")
+    color: core.getInput("color"),
 
+    fields: (core.getInput("fields") && typeof(core.getInput("fields") === "object")) ? core.getInput("fields") : null,
 };
 
 try {
     core.debug("Loading Client...");
-    
+
     const Client = new WebhookClient({id: data.webhook_ID, token: data.webhook_TOKEN});
     core.info("Configuration");
     core.info(JSON.stringify(data));

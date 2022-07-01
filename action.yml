@@ -5,16 +5,16 @@ description: >
   Supporting all the inputs of Discord
 
 inputs:
-  
+
   # Webhook Setup #
   id:
     description: Discord Webhook ID, for Users Safety, it should be stored in secrets of the Repo and inserted as a context expression.
     required: true
-  
+
   token:
     description: Discord Webhook Token, for Users Safety, it should be stored in secrets of the Repo and inserted as a context expression.
     required: true
-  
+
   # Webhook Options #
   username:
     description: Username of the Webhook
@@ -38,17 +38,17 @@ inputs:
   url:
     description: URL of The title which is on the embed
     required: false
-  
+
   # Author
   author:
     description: an Author Text which would be on the embed
     required: false
-  
+
   author_icon:
     description: Author Icon/Image that would be on the embed
     required: false
     default: null
-  
+
   author_url:
     description: URL of The author which is on the embed
     required: false
@@ -68,12 +68,12 @@ inputs:
   image:
     description: Image that would be on the embed
     required: false
-  
+
   # Thumbnail
   thumbnail:
     description: Image that would be on the embed as Thumbnail
     required: false
-  
+
   # ETC Embed Options
   color:
     description: Hex Code of a Color that would be on the embed, it would be RANDOM if it's not provided
@@ -86,6 +86,10 @@ inputs:
 
   description:
     description: a Text for Description of Embed
+    required: false
+
+  fields:
+    description: Add fields to the Embed
     required: false
 
 runs:
